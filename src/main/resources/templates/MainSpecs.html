@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА №2</title>
+</head>
+<body>
+<div th:insert="Blocks/Header"></div>
+
+<div align="center">
+    <h1>Технические требования</h1>
+    <a href="/Search/Specs"> Поиск тех. требований</a>
+    <a> | </a>
+    <a href="/Add/Specs"> Добавить тех. требования</a>
+</div>
+
+<div th:each="el : ${Specifications}">
+
+    <br>
+
+    <a>Модель процессора: </a>
+    <a th:text="${el.getCPU()}"></a>
+
+    <br>
+
+    <a>Количество оперативной памяти: </a>
+    <a th:text="${el.getRAM()}"></a>
+    <a>ГБ</a>
+
+    <br>
+
+    <a>Свободное пространство на диске: </a>
+    <a th:text="${el.getMemorySize()}"></a>
+    <a>МБ</a>
+
+    <br>
+
+    <a>Модель видеокарты: </a>
+    <a th:text="${el.getGPU()}"></a>
+
+    <br>
+
+    <a>Операционная система: </a>
+    <a th:text="${el.getOS()}"></a>
+
+    <br><br>
+    <hr>
+
+</div>
+
+</body>
+</html>

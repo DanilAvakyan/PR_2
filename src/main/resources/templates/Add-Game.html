@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА №2</title>
+</head>
+<body>
+<h2>Добавление игры</h2>
+
+<form th:action = "${'/Add/Game'}" method="post">
+    <input type="text" name="name" placeholder="Название">
+    <br><br>
+    <input type="number" name="price" placeholder="Цена">
+    <br><br>
+    <input type="text" name="developer" placeholder="Разработчик">
+    <br><br>
+    <input type="text" name="genre" placeholder="Жанр">
+    <br><br>
+    <input type="text" name="publisher" placeholder="Издатель">
+    <br><br>
+    <input type="text" name="specifications" placeholder="Технические требования">
+    <br><br>
+    <button type="submit"> Добавить игру</button>
+</form>
+
+</body>
+</html>

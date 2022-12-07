@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА №2</title>
+</head>
+<body>
+<h2>Поиск тех. требований</h2>
+<form method="post" th:action="${'/Search/Specs-result'}">
+    <input type="text" name="CPU">
+    <br><br>
+    <button type="submit">Точное сопадение</button>
+    <br><br>
+</form>
+
+<form method="post" th:action="${'/Search/Specs'}">
+    <input type="text" name="GPU">
+    <br><br>
+    <button type="submit">Не точное сопадение</button>
+</form>
+
+    <tbody>
+    <tr th:each="el : ${result}">
+
+        <br>
+
+        <a>Модель процессора: </a>
+        <a th:text="${el.getCPU()}"></a>
+
+        <br>
+
+        <a>Количество оперативной памяти: </a>
+        <a th:text="${el.getRAM()}"></a>
+
+        <br>
+
+        <a>Свободное пространство на диске: </a>
+        <a th:text="${el.getMemorySize()}"></a>
+
+        <br>
+
+        <a>Модель видеокарты: </a>
+        <a th:text="${el.getGPU()}"></a>
+
+        <br>
+
+        <a>Операционная система: </a>
+        <a th:text="${el.getOS()}"></a>
+
+        <br><br>
+        <hr>
+    </tr>
+    </tbody>
+
+</body>
+</html>

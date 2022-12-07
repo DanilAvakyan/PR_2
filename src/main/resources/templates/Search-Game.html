@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА №2</title>
+</head>
+<body>
+<h2>Поиск игры</h2>
+
+<form method="post" th:action="${'/Search/Game-result'}">
+  <input type="text" name="name">
+  <br><br>
+  <button type="submit">Точное совпадение</button>
+  <br><br>
+</form>
+
+<form method="post" th:action="${'/Search/Game'}">
+  <input type="text" name="price">
+  <br><br>
+  <button type="submit">Не точное совпадение</button>
+  <br><br>
+</form>
+
+<div th:each="el : ${result}">
+  <h3 th:text="${el.getName()}" ></h3>
+
+  <a>Цена: </a>
+  <a th:text="${el.getPrice()}"></a>
+  <a>&#36;</a>
+
+  <br>
+
+  <a>Разработчик: </a>
+  <a th:text="${el.getDeveloper()}"></a>
+
+  <br>
+
+  <a>Дата выхода: </a>
+  <a th:text="${el.getGenre()}"></a>
+
+  <br>
+
+  <a>Издатель: </a>
+  <a th:text="${el.getPublisher()}"></a>
+
+  <br>
+
+  <a>Технические требования: </a>
+  <a th:text="${el.getSpecifications()}"></a>
+
+  <br><br>
+  <hr>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА №2</title>
+</head>
+<body>
+<h2>Добавление тех. требования</h2>
+
+<form th:action = "${'/Add/Specs'}" method="post">
+    <input type="text" name="CPU" placeholder="Модель процессора">
+    <br><br>
+    <input type="number" name="RAM" placeholder="Количество оперативной памяти">
+    <br><br>
+    <input type="number" name="MemorySize" placeholder="Свободное место на диске">
+    <br><br>
+    <input type="text" name="GPU" placeholder="Модель видеокарты">
+    <br><br>
+    <input type="text" name="OS" placeholder="Операционная система">
+    <br><br>
+    <button type="submit"> Добавить тех. требование</button>
+</form>
+</body>
+</html>
